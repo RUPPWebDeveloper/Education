@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearning", "ELearning\ELearning.csproj", "{D6BD68A6-A9C1-4F1C-B6CA-FA66FD99CEE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELearning.Tests", "ELearning.Tests\ELearning.Tests.csproj", "{AFC79CFF-BD84-43E0-B2E1-40509D665B13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6BD68A6-A9C1-4F1C-B6CA-FA66FD99CEE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6BD68A6-A9C1-4F1C-B6CA-FA66FD99CEE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6BD68A6-A9C1-4F1C-B6CA-FA66FD99CEE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6BD68A6-A9C1-4F1C-B6CA-FA66FD99CEE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFC79CFF-BD84-43E0-B2E1-40509D665B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC79CFF-BD84-43E0-B2E1-40509D665B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC79CFF-BD84-43E0-B2E1-40509D665B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC79CFF-BD84-43E0-B2E1-40509D665B13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
