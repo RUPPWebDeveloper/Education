@@ -1,3 +1,91 @@
+<<<<<<< HEAD
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ELearning.dll.config
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ELearning.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ELearning.pdb
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Antlr3.Runtime.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.Core.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\EntityFramework.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Microsoft.Data.Edm.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Microsoft.Data.OData.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Newtonsoft.Json.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Net.Http.Formatting.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Spatial.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Helpers.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Http.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Http.OData.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Http.WebHost.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Mvc.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Optimization.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Razor.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.WebPages.Deployment.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.WebPages.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.WebPages.Razor.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\WebGrease.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\WebMatrix.Data.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\WebMatrix.WebData.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\EntityFramework.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Newtonsoft.Json.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Net.Http.Formatting.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Helpers.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Http.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Http.WebHost.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Mvc.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Razor.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.WebPages.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.WebPages.Deployment.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.WebPages.Razor.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\WebMatrix.Data.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\WebMatrix.WebData.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.Core.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Web.Http.OData.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Microsoft.Data.Edm.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\Microsoft.Data.OData.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\System.Spatial.xml
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\de\System.Spatial.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\es\System.Spatial.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\fr\System.Spatial.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\it\System.Spatial.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ja\System.Spatial.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ko\System.Spatial.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\ru\System.Spatial.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\obj\Debug\ELearning.csprojResolveAssemblyReference.cache
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\obj\Debug\ELearning.dll
+C:\Users\KHEIVDORA\Documents\GitHub\Education\ELearning\ELearning\obj\Debug\ELearning.pdb
+=======
 D:\WEB\Education\ELearning\ELearning\bin\ELearning.dll.config
 D:\WEB\Education\ELearning\ELearning\bin\ELearning.dll
 D:\WEB\Education\ELearning\ELearning\bin\ELearning.pdb
@@ -84,6 +172,7 @@ D:\WEB\Education\ELearning\ELearning\bin\zh-Hant\System.Spatial.resources.dll
 D:\WEB\Education\ELearning\ELearning\obj\Debug\ELearning.csprojResolveAssemblyReference.cache
 D:\WEB\Education\ELearning\ELearning\obj\Debug\ELearning.dll
 D:\WEB\Education\ELearning\ELearning\obj\Debug\ELearning.pdb
+<<<<<<< HEAD
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\bin\ELearning.dll.config
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\bin\ELearning.dll
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\bin\ELearning.pdb
@@ -170,3 +259,6 @@ C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELear
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\obj\Debug\ELearning.csprojResolveAssemblyReference.cache
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\obj\Debug\ELearning.dll
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\obj\Debug\ELearning.pdb
+=======
+>>>>>>> d47a05ad43c3f212cafadde7d98cb1e69dfae0f8
+>>>>>>> a4756c8a4a2918e662e7bbaaf48a3cb0c92afd44
