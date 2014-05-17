@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="educationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbAssignRole">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="LessonID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="LessonID" Type="int" Nullable="false" />
+    <Property Name="AssignedDate" Type="date" />
+    <Property Name="AdminID" Type="int" />
+  </EntityType>
+  <EntityType Name="tbExercise">
+    <Key>
+      <PropertyRef Name="ExerciseID" />
+    </Key>
+    <Property Name="ExerciseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Exercise" Type="nvarchar" MaxLength="50" />
+    <Property Name="AnswerKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="Solution" Type="tinyint" />
+    <Property Name="LessonID" Type="int" />
+  </EntityType>
+  <EntityType Name="tbLesson">
+    <Key>
+      <PropertyRef Name="LessonID" />
+    </Key>
+    <Property Name="LessonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LessonName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubjectID" Type="int" />
+    <Property Name="LessonNumber" Type="int" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="tbNewsFeed">
+    <Key>
+      <PropertyRef Name="NewsFeedID" />
+    </Key>
+    <Property Name="NewsFeedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="Level" Type="int" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+    <Property Name="Topic" Type="nvarchar" MaxLength="50" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContentFileName" Type="varchar" MaxLength="50" />
+    <Property Name="Date" Type="date" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="tbNewsFeedCategory">
+    <Key>
+      <PropertyRef Name="NewsFeedID" />
+    </Key>
+    <Property Name="NewsFeedID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbQuiz">
+    <Key>
+      <PropertyRef Name="QuizID" />
+    </Key>
+    <Property Name="QuizID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quiz" Type="nvarchar" MaxLength="50" />
+    <Property Name="Choices" Type="int" />
+    <Property Name="LessonID" Type="int" />
+  </EntityType>
+  <EntityType Name="tbSection">
+    <Key>
+      <PropertyRef Name="SectionID" />
+    </Key>
+    <Property Name="SectionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LessonID" Type="int" />
+    <Property Name="OrderNumber" Type="int" />
+    <Property Name="ContentFileName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbSubject">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+    </Key>
+    <Property Name="SubjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Grade" Type="tinyint" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbSubscriber">
+    <Key>
+      <PropertyRef Name="SubscriberID" />
+    </Key>
+    <Property Name="SubscriberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubscriberEmail" Type="varchar" MaxLength="50" />
+    <Property Name="PreferenceType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbSubscriberDetail">
+    <Key>
+      <PropertyRef Name="SubscriberID" />
+      <PropertyRef Name="NewsFeedID" />
+    </Key>
+    <Property Name="SubscriberID" Type="int" Nullable="false" />
+    <Property Name="NewsFeedID" Type="int" Nullable="false" />
+    <Property Name="DateTime" Type="smalldatetime" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbTrackUser">
+    <Key>
+      <PropertyRef Name="TrackUserID" />
+    </Key>
+    <Property Name="TrackUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="SectionID" Type="int" />
+    <Property Name="DataRecord" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActivityType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="educationModelStoreContainer">
+    <EntitySet Name="tbAssignRole" EntityType="Self.tbAssignRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbExercise" EntityType="Self.tbExercise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbLesson" EntityType="Self.tbLesson" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNewsFeed" EntityType="Self.tbNewsFeed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNewsFeedCategory" EntityType="Self.tbNewsFeedCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbQuiz" EntityType="Self.tbQuiz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSection" EntityType="Self.tbSection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSubject" EntityType="Self.tbSubject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSubscriber" EntityType="Self.tbSubscriber" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSubscriberDetail" EntityType="Self.tbSubscriberDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTrackUser" EntityType="Self.tbTrackUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbUser" EntityType="Self.tbUser" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

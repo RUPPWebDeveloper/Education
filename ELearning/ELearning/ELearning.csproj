@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -188,7 +190,58 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\education.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>education.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\education.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\education.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>education.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\FileIO.cs" />
+    <Compile Include="Models\tbAssignRole.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbExercise.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbLesson.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbNewsFeed.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbNewsFeedCategory.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbQuiz.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbSection.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbSubject.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbSubscriber.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbSubscriberDetail.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbTrackUser.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbUser.cs">
+      <DependentUpon>education.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Validation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -253,6 +306,23 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\education.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>education.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\education.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>education.edmx</DependentUpon>
+      <LastGenOutput>education.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\education.edmx.diagram">
+      <DependentUpon>education.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\education.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>education.edmx</DependentUpon>
+      <LastGenOutput>education.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -308,7 +378,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

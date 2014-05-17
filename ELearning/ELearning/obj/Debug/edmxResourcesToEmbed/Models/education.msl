@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="educationModelStoreContainer" CdmEntityContainer="educationEntities">
+    <EntitySetMapping Name="tbAssignRoles">
+      <EntityTypeMapping TypeName="educationModel.tbAssignRole">
+        <MappingFragment StoreEntitySet="tbAssignRole">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="AssignedDate" ColumnName="AssignedDate" />
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbExercises">
+      <EntityTypeMapping TypeName="educationModel.tbExercise">
+        <MappingFragment StoreEntitySet="tbExercise">
+          <ScalarProperty Name="ExerciseID" ColumnName="ExerciseID" />
+          <ScalarProperty Name="Exercise" ColumnName="Exercise" />
+          <ScalarProperty Name="AnswerKey" ColumnName="AnswerKey" />
+          <ScalarProperty Name="Solution" ColumnName="Solution" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbLessons">
+      <EntityTypeMapping TypeName="educationModel.tbLesson">
+        <MappingFragment StoreEntitySet="tbLesson">
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="LessonName" ColumnName="LessonName" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="LessonNumber" ColumnName="LessonNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNewsFeeds">
+      <EntityTypeMapping TypeName="educationModel.tbNewsFeed">
+        <MappingFragment StoreEntitySet="tbNewsFeed">
+          <ScalarProperty Name="NewsFeedID" ColumnName="NewsFeedID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Topic" ColumnName="Topic" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="ContentFileName" ColumnName="ContentFileName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNewsFeedCategories">
+      <EntityTypeMapping TypeName="educationModel.tbNewsFeedCategory">
+        <MappingFragment StoreEntitySet="tbNewsFeedCategory">
+          <ScalarProperty Name="NewsFeedID" ColumnName="NewsFeedID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuizs">
+      <EntityTypeMapping TypeName="educationModel.tbQuiz">
+        <MappingFragment StoreEntitySet="tbQuiz">
+          <ScalarProperty Name="QuizID" ColumnName="QuizID" />
+          <ScalarProperty Name="Quiz" ColumnName="Quiz" />
+          <ScalarProperty Name="Choices" ColumnName="Choices" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSections">
+      <EntityTypeMapping TypeName="educationModel.tbSection">
+        <MappingFragment StoreEntitySet="tbSection">
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+          <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="ContentFileName" ColumnName="ContentFileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubjects">
+      <EntityTypeMapping TypeName="educationModel.tbSubject">
+        <MappingFragment StoreEntitySet="tbSubject">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubscribers">
+      <EntityTypeMapping TypeName="educationModel.tbSubscriber">
+        <MappingFragment StoreEntitySet="tbSubscriber">
+          <ScalarProperty Name="SubscriberID" ColumnName="SubscriberID" />
+          <ScalarProperty Name="SubscriberEmail" ColumnName="SubscriberEmail" />
+          <ScalarProperty Name="PreferenceType" ColumnName="PreferenceType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubscriberDetails">
+      <EntityTypeMapping TypeName="educationModel.tbSubscriberDetail">
+        <MappingFragment StoreEntitySet="tbSubscriberDetail">
+          <ScalarProperty Name="SubscriberID" ColumnName="SubscriberID" />
+          <ScalarProperty Name="NewsFeedID" ColumnName="NewsFeedID" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTrackUsers">
+      <EntityTypeMapping TypeName="educationModel.tbTrackUser">
+        <MappingFragment StoreEntitySet="tbTrackUser">
+          <ScalarProperty Name="TrackUserID" ColumnName="TrackUserID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+          <ScalarProperty Name="DataRecord" ColumnName="DataRecord" />
+          <ScalarProperty Name="ActivityType" ColumnName="ActivityType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUsers">
+      <EntityTypeMapping TypeName="educationModel.tbUser">
+        <MappingFragment StoreEntitySet="tbUser">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

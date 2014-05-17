@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="educationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbAssignRole">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="LessonID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="LessonID" Type="Int32" Nullable="false" />
+    <Property Name="AssignedDate" Type="DateTime" Precision="0" />
+    <Property Name="AdminID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbExercise">
+    <Key>
+      <PropertyRef Name="ExerciseID" />
+    </Key>
+    <Property Name="ExerciseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Exercise" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AnswerKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Solution" Type="Byte" />
+    <Property Name="LessonID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbLesson">
+    <Key>
+      <PropertyRef Name="LessonID" />
+    </Key>
+    <Property Name="LessonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LessonName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubjectID" Type="Int32" />
+    <Property Name="LessonNumber" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbNewsFeed">
+    <Key>
+      <PropertyRef Name="NewsFeedID" />
+    </Key>
+    <Property Name="NewsFeedID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="Level" Type="Int32" />
+    <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Topic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContentFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="UserID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbNewsFeedCategory">
+    <Key>
+      <PropertyRef Name="NewsFeedID" />
+    </Key>
+    <Property Name="NewsFeedID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbQuiz">
+    <Key>
+      <PropertyRef Name="QuizID" />
+    </Key>
+    <Property Name="QuizID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quiz" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Choices" Type="Int32" />
+    <Property Name="LessonID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbSection">
+    <Key>
+      <PropertyRef Name="SectionID" />
+    </Key>
+    <Property Name="SectionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SectionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LessonID" Type="Int32" />
+    <Property Name="OrderNumber" Type="Int32" />
+    <Property Name="ContentFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbSubject">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Grade" Type="Byte" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbSubscriber">
+    <Key>
+      <PropertyRef Name="SubscriberID" />
+    </Key>
+    <Property Name="SubscriberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubscriberEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PreferenceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbSubscriberDetail">
+    <Key>
+      <PropertyRef Name="SubscriberID" />
+      <PropertyRef Name="NewsFeedID" />
+    </Key>
+    <Property Name="SubscriberID" Type="Int32" Nullable="false" />
+    <Property Name="NewsFeedID" Type="Int32" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbTrackUser">
+    <Key>
+      <PropertyRef Name="TrackUserID" />
+    </Key>
+    <Property Name="TrackUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SectionID" Type="Int32" />
+    <Property Name="DataRecord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActivityType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="educationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbAssignRoles" EntityType="Self.tbAssignRole" />
+    <EntitySet Name="tbExercises" EntityType="Self.tbExercise" />
+    <EntitySet Name="tbLessons" EntityType="Self.tbLesson" />
+    <EntitySet Name="tbNewsFeeds" EntityType="Self.tbNewsFeed" />
+    <EntitySet Name="tbNewsFeedCategories" EntityType="Self.tbNewsFeedCategory" />
+    <EntitySet Name="tbQuizs" EntityType="Self.tbQuiz" />
+    <EntitySet Name="tbSections" EntityType="Self.tbSection" />
+    <EntitySet Name="tbSubjects" EntityType="Self.tbSubject" />
+    <EntitySet Name="tbSubscribers" EntityType="Self.tbSubscriber" />
+    <EntitySet Name="tbSubscriberDetails" EntityType="Self.tbSubscriberDetail" />
+    <EntitySet Name="tbTrackUsers" EntityType="Self.tbTrackUser" />
+    <EntitySet Name="tbUsers" EntityType="Self.tbUser" />
+    <AssociationSet Name="tbLessontbQuiz" Association="educationModel.tbLessontbQuiz">
+      <End Role="tbLesson" EntitySet="tbLessons" />
+      <End Role="tbQuiz" EntitySet="tbQuizs" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="tbLessontbQuiz">
+    <End Type="educationModel.tbLesson" Role="tbLesson" Multiplicity="1" />
+    <End Type="educationModel.tbQuiz" Role="tbQuiz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLesson">
+        <PropertyRef Name="LessonID" />
+      </Principal>
+      <Dependent Role="tbQuiz">
+        <PropertyRef Name="LessonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
