@@ -12,11 +12,18 @@ namespace ELearning.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbSubject
+    public partial class Subject
     {
+        public Subject()
+        {
+            this.Lessons = new HashSet<Lesson>();
+        }
+    
         public int SubjectID { get; set; }
         public string SubjectName { get; set; }
         public Nullable<byte> Grade { get; set; }
         public string Description { get; set; }
+    
+        public virtual ICollection<Lesson> Lessons { get; set; }
     }
 }

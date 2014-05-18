@@ -12,11 +12,20 @@ namespace ELearning.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbAssignRole
+    public partial class Section
     {
-        public int UserID { get; set; }
+        public Section()
+        {
+            this.TrackUsers = new HashSet<TrackUser>();
+        }
+    
+        public int SectionID { get; set; }
+        public string SectionName { get; set; }
         public int LessonID { get; set; }
-        public Nullable<System.DateTime> AssignedDate { get; set; }
-        public Nullable<int> AdminID { get; set; }
+        public int OrderNumber { get; set; }
+        public string ContentFileName { get; set; }
+    
+        public virtual Lesson Lesson { get; set; }
+        public virtual ICollection<TrackUser> TrackUsers { get; set; }
     }
 }

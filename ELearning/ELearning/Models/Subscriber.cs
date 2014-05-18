@@ -12,12 +12,17 @@ namespace ELearning.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbTrackUser
+    public partial class Subscriber
     {
-        public int TrackUserID { get; set; }
-        public Nullable<int> UserID { get; set; }
-        public Nullable<int> SectionID { get; set; }
-        public string DataRecord { get; set; }
-        public string ActivityType { get; set; }
+        public Subscriber()
+        {
+            this.SubscriberDetails = new HashSet<SubscriberDetail>();
+        }
+    
+        public int SubscriberID { get; set; }
+        public string SubscriberEmail { get; set; }
+        public string PreferenceType { get; set; }
+    
+        public virtual ICollection<SubscriberDetail> SubscriberDetails { get; set; }
     }
 }

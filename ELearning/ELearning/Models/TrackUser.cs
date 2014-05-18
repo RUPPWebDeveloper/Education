@@ -12,11 +12,15 @@ namespace ELearning.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbSubscriberDetail
+    public partial class TrackUser
     {
-        public int SubscriberID { get; set; }
-        public int NewsFeedID { get; set; }
-        public Nullable<System.DateTime> DateTime { get; set; }
-        public string Description { get; set; }
+        public int TrackUserID { get; set; }
+        public int UserID { get; set; }
+        public int SectionID { get; set; }
+        public string DataRecord { get; set; }
+        public string ActivityType { get; set; }
+    
+        public virtual User User { get; set; }
+        public virtual Section Section { get; set; }
     }
 }

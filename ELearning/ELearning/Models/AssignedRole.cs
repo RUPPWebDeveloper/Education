@@ -12,10 +12,15 @@ namespace ELearning.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbSubscriber
+    public partial class AssignedRole
     {
-        public int SubscriberID { get; set; }
-        public string SubscriberEmail { get; set; }
-        public string PreferenceType { get; set; }
+        public int UserID { get; set; }
+        public int LessonID { get; set; }
+        public System.DateTime AssignedDate { get; set; }
+        public int AdminID { get; set; }
+    
+        public virtual User User { get; set; }
+        public virtual Lesson Lesson { get; set; }
+        public virtual User Admin { get; set; }
     }
 }

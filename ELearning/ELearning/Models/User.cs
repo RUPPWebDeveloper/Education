@@ -12,15 +12,28 @@ namespace ELearning.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbUser
+    public partial class User
     {
+        public User()
+        {
+            this.AssignedRoles = new HashSet<AssignedRole>();
+            this.AssignedRolesAdmin = new HashSet<AssignedRole>();
+            this.NewsFeeds = new HashSet<NewsFeed>();
+            this.TrackUsers = new HashSet<TrackUser>();
+        }
+    
         public int UserID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Sex { get; set; }
         public string Email { get; set; }
-        public Nullable<System.DateTime> DOB { get; set; }
+        public System.DateTime DOB { get; set; }
         public string UserType { get; set; }
         public string Password { get; set; }
+    
+        public virtual ICollection<AssignedRole> AssignedRoles { get; set; }
+        public virtual ICollection<AssignedRole> AssignedRolesAdmin { get; set; }
+        public virtual ICollection<NewsFeed> NewsFeeds { get; set; }
+        public virtual ICollection<TrackUser> TrackUsers { get; set; }
     }
 }

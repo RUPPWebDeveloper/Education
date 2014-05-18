@@ -13,10 +13,10 @@ namespace ELearning.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class educationEntities : DbContext
+    public partial class educationContainer : DbContext
     {
-        public educationEntities()
-            : base("name=educationEntities")
+        public educationContainer()
+            : base("name=educationContainer")
         {
         }
     
@@ -25,17 +25,17 @@ namespace ELearning.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<tbAssignRole> tbAssignRoles { get; set; }
-        public DbSet<tbExercise> tbExercises { get; set; }
-        public DbSet<tbLesson> tbLessons { get; set; }
-        public DbSet<tbNewsFeed> tbNewsFeeds { get; set; }
-        public DbSet<tbNewsFeedCategory> tbNewsFeedCategories { get; set; }
-        public DbSet<tbQuiz> tbQuizs { get; set; }
-        public DbSet<tbSection> tbSections { get; set; }
-        public DbSet<tbSubject> tbSubjects { get; set; }
-        public DbSet<tbSubscriber> tbSubscribers { get; set; }
-        public DbSet<tbSubscriberDetail> tbSubscriberDetails { get; set; }
-        public DbSet<tbTrackUser> tbTrackUsers { get; set; }
-        public DbSet<tbUser> tbUsers { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Subject> tbSubjects { get; set; }
+        public DbSet<Lesson> tbLessons { get; set; }
+        public DbSet<AssignedRole> tbAssignedRoles { get; set; }
+        public DbSet<Exercise> tbExercises { get; set; }
+        public DbSet<NewsFeedCategory> NewsFeedCategories { get; set; }
+        public DbSet<NewsFeed> NewsFeeds { get; set; }
+        public DbSet<Quiz> tbQuizs { get; set; }
+        public DbSet<Section> Sections { get; set; }
+        public DbSet<Subscriber> tbSubscribers { get; set; }
+        public DbSet<SubscriberDetail> tbSubscriberDetails { get; set; }
+        public DbSet<TrackUser> tbTrackUsers { get; set; }
     }
 }

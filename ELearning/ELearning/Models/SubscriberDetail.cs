@@ -12,12 +12,14 @@ namespace ELearning.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbExercise
+    public partial class SubscriberDetail
     {
-        public int ExerciseID { get; set; }
-        public string Exercise { get; set; }
-        public string AnswerKey { get; set; }
-        public Nullable<byte> Solution { get; set; }
-        public Nullable<int> LessonID { get; set; }
+        public int SubscriberID { get; set; }
+        public int NewsFeedID { get; set; }
+        public System.DateTime DateTime { get; set; }
+        public string Description { get; set; }
+    
+        public virtual Subscriber Subscriber { get; set; }
+        public virtual NewsFeed NewsFeed { get; set; }
     }
 }

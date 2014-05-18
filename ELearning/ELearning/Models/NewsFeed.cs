@@ -12,16 +12,25 @@ namespace ELearning.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbNewsFeed
+    public partial class NewsFeed
     {
+        public NewsFeed()
+        {
+            this.SubscriberDetails = new HashSet<SubscriberDetail>();
+        }
+    
         public int NewsFeedID { get; set; }
-        public Nullable<int> CategoryID { get; set; }
-        public Nullable<int> Level { get; set; }
+        public int CategoryID { get; set; }
+        public int Level { get; set; }
         public string Subject { get; set; }
         public string Topic { get; set; }
         public string Detail { get; set; }
         public string ContentFileName { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> UserID { get; set; }
+        public System.DateTime Date { get; set; }
+        public int UserID { get; set; }
+    
+        public virtual NewsFeedCategory NewsFeedCategory { get; set; }
+        public virtual User User { get; set; }
+        public virtual ICollection<SubscriberDetail> SubscriberDetails { get; set; }
     }
 }

@@ -12,11 +12,17 @@ namespace ELearning.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbNewsFeedCategory
+    public partial class NewsFeedCategory
     {
-        public int NewsFeedID { get; set; }
-        public Nullable<int> CategoryID { get; set; }
+        public NewsFeedCategory()
+        {
+            this.NewsFeeds = new HashSet<NewsFeed>();
+        }
+    
+        public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public string Image { get; set; }
+    
+        public virtual ICollection<NewsFeed> NewsFeeds { get; set; }
     }
 }

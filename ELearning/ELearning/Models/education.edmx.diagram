@@ -4,22 +4,32 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a771193c4d934b239c6f537b9486daf2" Name="Diagram1">
-        <EntityTypeShape EntityType="educationModel.tbAssignRole" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbExercise" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbLesson" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbNewsFeed" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbNewsFeedCategory" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbQuiz" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbSection" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbSubject" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbSubscriber" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbSubscriberDetail" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbTrackUser" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="educationModel.tbUser" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="educationModel.tbLessontbAssignRole" />
-        <AssociationConnector Association="educationModel.tbUsertbAssignRole" />
-        <AssociationConnector Association="educationModel.tbLessontbQuiz" />
+      <Diagram DiagramId="425e427a080049f18af4bac563d59e90" Name="Diagram1" >
+        <EntityTypeShape EntityType="education.User" Width="1.5" PointX="1.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="education.Subject" Width="1.5" PointX="3.875" PointY="1.375" />
+        <EntityTypeShape EntityType="education.Lesson" Width="1.5" PointX="6.125" PointY="1.75" />
+        <AssociationConnector Association="education.SubjectID" />
+        <EntityTypeShape EntityType="education.AssignedRole" Width="1.5" PointX="8.75" PointY="1.625" />
+        <AssociationConnector Association="education.UserAssignedRole" />
+        <AssociationConnector Association="education.LessonAssignedRole" />
+        <AssociationConnector Association="education.UserAssignedRole1" />
+        <EntityTypeShape EntityType="education.Exercise" Width="1.5" PointX="4.375" PointY="4.625" />
+        <AssociationConnector Association="education.LessonExercise" />
+        <EntityTypeShape EntityType="education.NewsFeedCategory" Width="1.5" PointX="7.625" PointY="5.375" />
+        <EntityTypeShape EntityType="education.NewsFeed" Width="1.5" PointX="9.5" PointY="5.375" />
+        <AssociationConnector Association="education.NewsFeedCategoryNewsFeed" />
+        <AssociationConnector Association="education.UserNewsFeed" />
+        <EntityTypeShape EntityType="education.Quiz" Width="1.5" PointX="11.75" PointY="5.625" />
+        <AssociationConnector Association="education.LessonQuiz" />
+        <EntityTypeShape EntityType="education.Section" Width="1.5" PointX="11.125" PointY="3.125" />
+        <AssociationConnector Association="education.LessonSection" />
+        <EntityTypeShape EntityType="education.Subscriber" Width="1.5" PointX="4.875" PointY="7.25" />
+        <EntityTypeShape EntityType="education.SubscriberDetail" Width="1.5" PointX="7" PointY="7.25" />
+        <AssociationConnector Association="education.SubscriberSubscriberDetail" />
+        <AssociationConnector Association="education.NewsFeedSubscriberDetail" />
+        <EntityTypeShape EntityType="education.TrackUser" Width="1.5" PointX="3.5" PointY="7.5" />
+        <AssociationConnector Association="education.UserTrackUser" />
+        <AssociationConnector Association="education.SectionTrackUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

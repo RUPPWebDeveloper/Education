@@ -172,7 +172,6 @@ D:\WEB\Education\ELearning\ELearning\bin\zh-Hant\System.Spatial.resources.dll
 D:\WEB\Education\ELearning\ELearning\obj\Debug\ELearning.csprojResolveAssemblyReference.cache
 D:\WEB\Education\ELearning\ELearning\obj\Debug\ELearning.dll
 D:\WEB\Education\ELearning\ELearning\obj\Debug\ELearning.pdb
-<<<<<<< HEAD
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\bin\ELearning.dll.config
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\bin\ELearning.dll
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\bin\ELearning.pdb
@@ -259,6 +258,5 @@ C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELear
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\obj\Debug\ELearning.csprojResolveAssemblyReference.cache
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\obj\Debug\ELearning.dll
 C:\Users\Eanghort\Dropbox\RUPP\Web Programming\ASP.Net\Education\ELearning\ELearning\obj\Debug\ELearning.pdb
-=======
 >>>>>>> d47a05ad43c3f212cafadde7d98cb1e69dfae0f8
 >>>>>>> a4756c8a4a2918e662e7bbaaf48a3cb0c92afd44
