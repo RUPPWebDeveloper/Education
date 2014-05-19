@@ -1,0 +1,883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="education.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="educationStoreContainer">
+    <EntitySet Name="Users" EntityType="education.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbSubjects" EntityType="education.Store.tbSubjects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbLessons" EntityType="education.Store.tbLessons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbAssignedRoles" EntityType="education.Store.tbAssignedRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbExercises" EntityType="education.Store.tbExercises" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NewsFeedCategories" EntityType="education.Store.NewsFeedCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NewsFeeds" EntityType="education.Store.NewsFeeds" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbQuizs" EntityType="education.Store.tbQuizs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sections" EntityType="education.Store.Sections" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbSubscribers" EntityType="education.Store.tbSubscribers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbSubscriberDetails" EntityType="education.Store.tbSubscriberDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbTrackUsers" EntityType="education.Store.tbTrackUsers" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="SubjectID" Association="education.Store.SubjectID">
+      <End Role="Subject" EntitySet="tbSubjects" />
+      <End Role="Lesson" EntitySet="tbLessons" />
+    </AssociationSet>
+    <AssociationSet Name="UserAssignedRole" Association="education.Store.UserAssignedRole">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AssignedRole" EntitySet="tbAssignedRoles" />
+    </AssociationSet>
+    <AssociationSet Name="LessonAssignedRole" Association="education.Store.LessonAssignedRole">
+      <End Role="Lesson" EntitySet="tbLessons" />
+      <End Role="AssignedRole" EntitySet="tbAssignedRoles" />
+    </AssociationSet>
+    <AssociationSet Name="UserAssignedRole1" Association="education.Store.UserAssignedRole1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AssignedRole" EntitySet="tbAssignedRoles" />
+    </AssociationSet>
+    <AssociationSet Name="LessonExercise" Association="education.Store.LessonExercise">
+      <End Role="Lesson" EntitySet="tbLessons" />
+      <End Role="Exercise" EntitySet="tbExercises" />
+    </AssociationSet>
+    <AssociationSet Name="NewsFeedCategoryNewsFeed" Association="education.Store.NewsFeedCategoryNewsFeed">
+      <End Role="NewsFeedCategory" EntitySet="NewsFeedCategories" />
+      <End Role="NewsFeed" EntitySet="NewsFeeds" />
+    </AssociationSet>
+    <AssociationSet Name="UserNewsFeed" Association="education.Store.UserNewsFeed">
+      <End Role="User" EntitySet="Users" />
+      <End Role="NewsFeed" EntitySet="NewsFeeds" />
+    </AssociationSet>
+    <AssociationSet Name="LessonQuiz" Association="education.Store.LessonQuiz">
+      <End Role="Lesson" EntitySet="tbLessons" />
+      <End Role="Quiz" EntitySet="tbQuizs" />
+    </AssociationSet>
+    <AssociationSet Name="LessonSection" Association="education.Store.LessonSection">
+      <End Role="Lesson" EntitySet="tbLessons" />
+      <End Role="Section" EntitySet="Sections" />
+    </AssociationSet>
+    <AssociationSet Name="SubscriberSubscriberDetail" Association="education.Store.SubscriberSubscriberDetail">
+      <End Role="Subscriber" EntitySet="tbSubscribers" />
+      <End Role="SubscriberDetail" EntitySet="tbSubscriberDetails" />
+    </AssociationSet>
+    <AssociationSet Name="NewsFeedSubscriberDetail" Association="education.Store.NewsFeedSubscriberDetail">
+      <End Role="NewsFeed" EntitySet="NewsFeeds" />
+      <End Role="SubscriberDetail" EntitySet="tbSubscriberDetails" />
+    </AssociationSet>
+    <AssociationSet Name="UserTrackUser" Association="education.Store.UserTrackUser">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TrackUser" EntitySet="tbTrackUsers" />
+    </AssociationSet>
+    <AssociationSet Name="SectionTrackUser" Association="education.Store.SectionTrackUser">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="TrackUser" EntitySet="tbTrackUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sex" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DOB" Type="datetime" Nullable="false" />
+    <Property Name="UserType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbSubjects">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+    </Key>
+    <Property Name="SubjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubjectName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Grade" Type="tinyint" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbLessons">
+    <Key>
+      <PropertyRef Name="LessonID" />
+    </Key>
+    <Property Name="LessonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LessonName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubjectID" Type="int" Nullable="false" />
+    <Property Name="LessonNumber" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbAssignedRoles">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="LessonID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="LessonID" Type="int" Nullable="false" />
+    <Property Name="AssignedDate" Type="datetime" Nullable="false" />
+    <Property Name="AdminID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbExercises">
+    <Key>
+      <PropertyRef Name="ExerciseID" />
+    </Key>
+    <Property Name="ExerciseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Exeercise" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AnswerKey" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Solution" Type="tinyint" Nullable="false" />
+    <Property Name="LessonID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsFeedCategories">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsFeeds">
+    <Key>
+      <PropertyRef Name="NewsFeedID" />
+    </Key>
+    <Property Name="NewsFeedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Topic" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContentFileName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbQuizs">
+    <Key>
+      <PropertyRef Name="QuizID" />
+    </Key>
+    <Property Name="QuizID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuizDetail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Choice" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LessonID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sections">
+    <Key>
+      <PropertyRef Name="SectionID" />
+    </Key>
+    <Property Name="SectionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectionName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LessonID" Type="int" Nullable="false" />
+    <Property Name="OrderNumber" Type="int" Nullable="false" />
+    <Property Name="ContentFileName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbSubscribers">
+    <Key>
+      <PropertyRef Name="SubscriberID" />
+    </Key>
+    <Property Name="SubscriberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubscriberEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PreferenceType" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbSubscriberDetails">
+    <Key>
+      <PropertyRef Name="SubscriberID" />
+      <PropertyRef Name="NewsFeedID" />
+    </Key>
+    <Property Name="SubscriberID" Type="int" Nullable="false" />
+    <Property Name="NewsFeedID" Type="int" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbTrackUsers">
+    <Key>
+      <PropertyRef Name="TrackUserID" />
+    </Key>
+    <Property Name="TrackUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="SectionID" Type="int" Nullable="false" />
+    <Property Name="DataRecord" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ActivityType" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="SubjectID">
+    <End Role="Subject" Type="education.Store.tbSubjects" Multiplicity="1" />
+    <End Role="Lesson" Type="education.Store.tbLessons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="Lesson">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserAssignedRole">
+    <End Role="User" Type="education.Store.Users" Multiplicity="1" />
+    <End Role="AssignedRole" Type="education.Store.tbAssignedRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AssignedRole">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LessonAssignedRole">
+    <End Role="Lesson" Type="education.Store.tbLessons" Multiplicity="1" />
+    <End Role="AssignedRole" Type="education.Store.tbAssignedRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="LessonID" />
+      </Principal>
+      <Dependent Role="AssignedRole">
+        <PropertyRef Name="LessonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserAssignedRole1">
+    <End Role="User" Type="education.Store.Users" Multiplicity="1" />
+    <End Role="AssignedRole" Type="education.Store.tbAssignedRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AssignedRole">
+        <PropertyRef Name="AdminID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LessonExercise">
+    <End Role="Lesson" Type="education.Store.tbLessons" Multiplicity="1" />
+    <End Role="Exercise" Type="education.Store.tbExercises" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="LessonID" />
+      </Principal>
+      <Dependent Role="Exercise">
+        <PropertyRef Name="LessonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NewsFeedCategoryNewsFeed">
+    <End Role="NewsFeedCategory" Type="education.Store.NewsFeedCategories" Multiplicity="1" />
+    <End Role="NewsFeed" Type="education.Store.NewsFeeds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewsFeedCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="NewsFeed">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserNewsFeed">
+    <End Role="User" Type="education.Store.Users" Multiplicity="1" />
+    <End Role="NewsFeed" Type="education.Store.NewsFeeds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="NewsFeed">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LessonQuiz">
+    <End Role="Lesson" Type="education.Store.tbLessons" Multiplicity="1" />
+    <End Role="Quiz" Type="education.Store.tbQuizs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="LessonID" />
+      </Principal>
+      <Dependent Role="Quiz">
+        <PropertyRef Name="LessonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LessonSection">
+    <End Role="Lesson" Type="education.Store.tbLessons" Multiplicity="1" />
+    <End Role="Section" Type="education.Store.Sections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="LessonID" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="LessonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubscriberSubscriberDetail">
+    <End Role="Subscriber" Type="education.Store.tbSubscribers" Multiplicity="1" />
+    <End Role="SubscriberDetail" Type="education.Store.tbSubscriberDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subscriber">
+        <PropertyRef Name="SubscriberID" />
+      </Principal>
+      <Dependent Role="SubscriberDetail">
+        <PropertyRef Name="SubscriberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NewsFeedSubscriberDetail">
+    <End Role="NewsFeed" Type="education.Store.NewsFeeds" Multiplicity="1" />
+    <End Role="SubscriberDetail" Type="education.Store.tbSubscriberDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewsFeed">
+        <PropertyRef Name="NewsFeedID" />
+      </Principal>
+      <Dependent Role="SubscriberDetail">
+        <PropertyRef Name="NewsFeedID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserTrackUser">
+    <End Role="User" Type="education.Store.Users" Multiplicity="1" />
+    <End Role="TrackUser" Type="education.Store.tbTrackUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="TrackUser">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SectionTrackUser">
+    <End Role="Section" Type="education.Store.Sections" Multiplicity="1" />
+    <End Role="TrackUser" Type="education.Store.tbTrackUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionID" />
+      </Principal>
+      <Dependent Role="TrackUser">
+        <PropertyRef Name="SectionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="education" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="educationContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="education.User" />
+          <EntitySet Name="tbSubjects" EntityType="education.Subject" />
+          <EntitySet Name="tbLessons" EntityType="education.Lesson" />
+          <AssociationSet Name="SubjectID" Association="education.SubjectID">
+            <End Role="Subject" EntitySet="tbSubjects" />
+            <End Role="Lesson" EntitySet="tbLessons" />
+          </AssociationSet>
+          <EntitySet Name="tbAssignedRoles" EntityType="education.AssignedRole" />
+          <AssociationSet Name="UserAssignedRole" Association="education.UserAssignedRole">
+            <End Role="User" EntitySet="Users" />
+            <End Role="AssignedRole" EntitySet="tbAssignedRoles" />
+          </AssociationSet>
+          <AssociationSet Name="LessonAssignedRole" Association="education.LessonAssignedRole">
+            <End Role="Lesson" EntitySet="tbLessons" />
+            <End Role="AssignedRole" EntitySet="tbAssignedRoles" />
+          </AssociationSet>
+          <AssociationSet Name="UserAssignedRole1" Association="education.UserAssignedRole1">
+            <End Role="User" EntitySet="Users" />
+            <End Role="AssignedRole" EntitySet="tbAssignedRoles" />
+          </AssociationSet>
+          <EntitySet Name="tbExercises" EntityType="education.Exercise" />
+          <AssociationSet Name="LessonExercise" Association="education.LessonExercise">
+            <End Role="Lesson" EntitySet="tbLessons" />
+            <End Role="Exercise" EntitySet="tbExercises" />
+          </AssociationSet>
+          <EntitySet Name="NewsFeedCategories" EntityType="education.NewsFeedCategory" />
+          <EntitySet Name="NewsFeeds" EntityType="education.NewsFeed" />
+          <AssociationSet Name="NewsFeedCategoryNewsFeed" Association="education.NewsFeedCategoryNewsFeed">
+            <End Role="NewsFeedCategory" EntitySet="NewsFeedCategories" />
+            <End Role="NewsFeed" EntitySet="NewsFeeds" />
+          </AssociationSet>
+          <AssociationSet Name="UserNewsFeed" Association="education.UserNewsFeed">
+            <End Role="User" EntitySet="Users" />
+            <End Role="NewsFeed" EntitySet="NewsFeeds" />
+          </AssociationSet>
+          <EntitySet Name="tbQuizs" EntityType="education.Quiz" />
+          <AssociationSet Name="LessonQuiz" Association="education.LessonQuiz">
+            <End Role="Lesson" EntitySet="tbLessons" />
+            <End Role="Quiz" EntitySet="tbQuizs" />
+          </AssociationSet>
+          <EntitySet Name="Sections" EntityType="education.Section" />
+          <AssociationSet Name="LessonSection" Association="education.LessonSection">
+            <End Role="Lesson" EntitySet="tbLessons" />
+            <End Role="Section" EntitySet="Sections" />
+          </AssociationSet>
+          <EntitySet Name="tbSubscribers" EntityType="education.Subscriber" />
+          <EntitySet Name="tbSubscriberDetails" EntityType="education.SubscriberDetail" />
+          <AssociationSet Name="SubscriberSubscriberDetail" Association="education.SubscriberSubscriberDetail">
+            <End Role="Subscriber" EntitySet="tbSubscribers" />
+            <End Role="SubscriberDetail" EntitySet="tbSubscriberDetails" />
+          </AssociationSet>
+          <AssociationSet Name="NewsFeedSubscriberDetail" Association="education.NewsFeedSubscriberDetail">
+            <End Role="NewsFeed" EntitySet="NewsFeeds" />
+            <End Role="SubscriberDetail" EntitySet="tbSubscriberDetails" />
+          </AssociationSet>
+          <EntitySet Name="tbTrackUsers" EntityType="education.TrackUser" />
+          <AssociationSet Name="UserTrackUser" Association="education.UserTrackUser">
+            <End Role="User" EntitySet="Users" />
+            <End Role="TrackUser" EntitySet="tbTrackUsers" />
+          </AssociationSet>
+          <AssociationSet Name="SectionTrackUser" Association="education.SectionTrackUser">
+            <End Role="Section" EntitySet="Sections" />
+            <End Role="TrackUser" EntitySet="tbTrackUsers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <Property Name="LastName" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <Property Name="Sex" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" />
+          <Property Name="UserType" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <Property Name="Password" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <NavigationProperty Name="AssignedRoles" Relationship="education.UserAssignedRole" FromRole="User" ToRole="AssignedRole" />
+          <NavigationProperty Name="AssignedRolesAdmin" Relationship="education.UserAssignedRole1" FromRole="User" ToRole="AssignedRole" />
+          <NavigationProperty Name="NewsFeeds" Relationship="education.UserNewsFeed" FromRole="User" ToRole="NewsFeed" />
+          <NavigationProperty Name="TrackUsers" Relationship="education.UserTrackUser" FromRole="User" ToRole="TrackUser" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubjectName" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <Property Name="Grade" Type="Byte" />
+          <Property Name="Description" Type="String" Nullable="false" Unicode="true" MaxLength="Max" />
+          <NavigationProperty Name="Lessons" Relationship="education.SubjectID" FromRole="Subject" ToRole="Lesson" />
+        </EntityType>
+        <EntityType Name="Lesson">
+          <Key>
+            <PropertyRef Name="LessonID" />
+          </Key>
+          <Property Name="LessonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LessonName" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <NavigationProperty Name="Subject" Relationship="education.SubjectID" FromRole="Lesson" ToRole="Subject" />
+          <Property Name="SubjectID" Type="Int32" Nullable="false" />
+          <Property Name="LessonNumber" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <NavigationProperty Name="AssignedRoles" Relationship="education.LessonAssignedRole" FromRole="Lesson" ToRole="AssignedRole" />
+          <NavigationProperty Name="Exercises" Relationship="education.LessonExercise" FromRole="Lesson" ToRole="Exercise" />
+          <NavigationProperty Name="Quizs" Relationship="education.LessonQuiz" FromRole="Lesson" ToRole="Quiz" />
+          <NavigationProperty Name="Sections" Relationship="education.LessonSection" FromRole="Lesson" ToRole="Section" />
+        </EntityType>
+        <Association Name="SubjectID">
+          <End Type="education.Subject" Role="Subject" Multiplicity="1" />
+          <End Type="education.Lesson" Role="Lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="Lesson">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AssignedRole" >
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="LessonID" />
+          </Key>
+          <NavigationProperty Name="User" Relationship="education.UserAssignedRole" FromRole="AssignedRole" ToRole="User" />
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <NavigationProperty Name="Lesson" Relationship="education.LessonAssignedRole" FromRole="AssignedRole" ToRole="Lesson" />
+          <Property Name="LessonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="AssignedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Admin" Relationship="education.UserAssignedRole1" FromRole="AssignedRole" ToRole="User" />
+          <Property Name="AdminID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="UserAssignedRole">
+          <End Type="education.User" Role="User" Multiplicity="1" />
+          <End Type="education.AssignedRole" Role="AssignedRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="AssignedRole">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LessonAssignedRole">
+          <End Type="education.Lesson" Role="Lesson" Multiplicity="1" />
+          <End Type="education.AssignedRole" Role="AssignedRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lesson">
+              <PropertyRef Name="LessonID" />
+            </Principal>
+            <Dependent Role="AssignedRole">
+              <PropertyRef Name="LessonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserAssignedRole1">
+          <End Type="education.User" Role="User" Multiplicity="1" />
+          <End Type="education.AssignedRole" Role="AssignedRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="AssignedRole">
+              <PropertyRef Name="AdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Exercise">
+          <Key>
+            <PropertyRef Name="ExerciseID" />
+          </Key>
+          <Property Name="ExerciseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Exeercise" Type="String" Nullable="false" Unicode="true" MaxLength="Max" />
+          <Property Name="AnswerKey" Type="String" Unicode="true" Nullable="false" />
+          <Property Name="Solution" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Lesson" Relationship="education.LessonExercise" FromRole="Exercise" ToRole="Lesson" />
+          <Property Name="LessonID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="LessonExercise">
+          <End Type="education.Lesson" Role="Lesson" Multiplicity="1" />
+          <End Type="education.Exercise" Role="Exercise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lesson">
+              <PropertyRef Name="LessonID" />
+            </Principal>
+            <Dependent Role="Exercise">
+              <PropertyRef Name="LessonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NewsFeedCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <Property Name="Image" Type="String" Nullable="false" MaxLength="Max" />
+          <NavigationProperty Name="NewsFeeds" Relationship="education.NewsFeedCategoryNewsFeed" FromRole="NewsFeedCategory" ToRole="NewsFeed" />
+        </EntityType>
+        <EntityType Name="NewsFeed">
+          <Key>
+            <PropertyRef Name="NewsFeedID" />
+          </Key>
+          <Property Name="NewsFeedID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="NewsFeedCategory" Relationship="education.NewsFeedCategoryNewsFeed" FromRole="NewsFeed" ToRole="NewsFeedCategory" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="Level" Type="Int32" Nullable="false" />
+          <Property Name="Subject" Type="String" Unicode="true" Nullable="false" MaxLength="Max" />
+          <Property Name="Topic" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <Property Name="Detail" Type="String" Unicode="true" MaxLength="Max" annotation:StoreGeneratedPattern="None" Nullable="false" />
+          <Property Name="ContentFileName" Type="String" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="education.UserNewsFeed" FromRole="NewsFeed" ToRole="User" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SubscriberDetails" Relationship="education.NewsFeedSubscriberDetail" FromRole="NewsFeed" ToRole="SubscriberDetail" />
+        </EntityType>
+        <Association Name="NewsFeedCategoryNewsFeed">
+          <End Type="education.NewsFeedCategory" Role="NewsFeedCategory" Multiplicity="1" />
+          <End Type="education.NewsFeed" Role="NewsFeed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsFeedCategory">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="NewsFeed">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserNewsFeed">
+          <End Type="education.User" Role="User" Multiplicity="1" />
+          <End Type="education.NewsFeed" Role="NewsFeed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="NewsFeed">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Quiz">
+          <Key>
+            <PropertyRef Name="QuizID" />
+          </Key>
+          <Property Name="QuizID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuizDetail" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <Property Name="Choice" Type="String" Nullable="false" />
+          <NavigationProperty Name="Lesson" Relationship="education.LessonQuiz" FromRole="Quiz" ToRole="Lesson" />
+          <Property Name="LessonID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="LessonQuiz">
+          <End Type="education.Lesson" Role="Lesson" Multiplicity="1" />
+          <End Type="education.Quiz" Role="Quiz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lesson">
+              <PropertyRef Name="LessonID" />
+            </Principal>
+            <Dependent Role="Quiz">
+              <PropertyRef Name="LessonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="SectionID" />
+          </Key>
+          <Property Name="SectionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SectionName" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <NavigationProperty Name="Lesson" Relationship="education.LessonSection" FromRole="Section" ToRole="Lesson" />
+          <Property Name="LessonID" Type="Int32" Nullable="false" />
+          <Property Name="OrderNumber" Type="Int32" Nullable="false" />
+          <Property Name="ContentFileName" Type="String" Nullable="false" Unicode="true" />
+          <NavigationProperty Name="TrackUsers" Relationship="education.SectionTrackUser" FromRole="Section" ToRole="TrackUser" />
+        </EntityType>
+        <Association Name="LessonSection">
+          <End Type="education.Lesson" Role="Lesson" Multiplicity="1" />
+          <End Type="education.Section" Role="Section" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lesson">
+              <PropertyRef Name="LessonID" />
+            </Principal>
+            <Dependent Role="Section">
+              <PropertyRef Name="LessonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Subscriber">
+          <Key>
+            <PropertyRef Name="SubscriberID" />
+          </Key>
+          <Property Name="SubscriberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubscriberEmail" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="PreferenceType" Type="String" Nullable="false" MaxLength="Max" />
+          <NavigationProperty Name="SubscriberDetails" Relationship="education.SubscriberSubscriberDetail" FromRole="Subscriber" ToRole="SubscriberDetail" />
+        </EntityType>
+        <EntityType Name="SubscriberDetail" >
+          <Key>
+            <PropertyRef Name="SubscriberID" />
+            <PropertyRef Name="NewsFeedID" />
+          </Key>
+          <NavigationProperty Name="Subscriber" Relationship="education.SubscriberSubscriberDetail" FromRole="SubscriberDetail" ToRole="Subscriber" />
+          <Property Name="SubscriberID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NewsFeed" Relationship="education.NewsFeedSubscriberDetail" FromRole="SubscriberDetail" ToRole="NewsFeed" />
+          <Property Name="NewsFeedID" Type="Int32" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" />
+          <Property Name="Description" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+        </EntityType>
+        <Association Name="SubscriberSubscriberDetail">
+          <End Type="education.Subscriber" Role="Subscriber" Multiplicity="1" />
+          <End Type="education.SubscriberDetail" Role="SubscriberDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subscriber">
+              <PropertyRef Name="SubscriberID" />
+            </Principal>
+            <Dependent Role="SubscriberDetail">
+              <PropertyRef Name="SubscriberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NewsFeedSubscriberDetail">
+          <End Type="education.NewsFeed" Role="NewsFeed" Multiplicity="1" />
+          <End Type="education.SubscriberDetail" Role="SubscriberDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsFeed">
+              <PropertyRef Name="NewsFeedID" />
+            </Principal>
+            <Dependent Role="SubscriberDetail">
+              <PropertyRef Name="NewsFeedID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TrackUser">
+          <Key>
+            <PropertyRef Name="TrackUserID" />
+          </Key>
+          <Property Name="TrackUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="education.UserTrackUser" FromRole="TrackUser" ToRole="User" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="SectionID" Type="Int32" Nullable="false" />
+          <Property Name="DataRecord" Type="String" MaxLength="Max" Unicode="true" Nullable="false" />
+          <Property Name="ActivityType" Type="String" Unicode="true" MaxLength="Max" Nullable="false" />
+          <NavigationProperty Name="Section" Relationship="education.SectionTrackUser" FromRole="TrackUser" ToRole="Section" />
+        </EntityType>
+        <Association Name="UserTrackUser">
+          <End Type="education.User" Role="User" Multiplicity="1" />
+          <End Type="education.TrackUser" Role="TrackUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TrackUser">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SectionTrackUser">
+          <End Type="education.Section" Role="Section" Multiplicity="1" />
+          <End Type="education.TrackUser" Role="TrackUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="SectionID" />
+            </Principal>
+            <Dependent Role="TrackUser">
+              <PropertyRef Name="SectionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="educationStoreContainer" CdmEntityContainer="educationContainer">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(education.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubjects">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Subject)">
+        <MappingFragment StoreEntitySet="tbSubjects">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbLessons">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Lesson)">
+        <MappingFragment StoreEntitySet="tbLessons">
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="LessonName" ColumnName="LessonName" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="LessonNumber" ColumnName="LessonNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAssignedRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(education.AssignedRole)">
+        <MappingFragment StoreEntitySet="tbAssignedRoles">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="AssignedDate" ColumnName="AssignedDate" />
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbExercises">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Exercise)">
+        <MappingFragment StoreEntitySet="tbExercises">
+          <ScalarProperty Name="ExerciseID" ColumnName="ExerciseID" />
+          <ScalarProperty Name="Exeercise" ColumnName="Exeercise" />
+          <ScalarProperty Name="AnswerKey" ColumnName="AnswerKey" />
+          <ScalarProperty Name="Solution" ColumnName="Solution" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsFeedCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(education.NewsFeedCategory)">
+        <MappingFragment StoreEntitySet="NewsFeedCategories">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsFeeds">
+      <EntityTypeMapping TypeName="IsTypeOf(education.NewsFeed)">
+        <MappingFragment StoreEntitySet="NewsFeeds">
+          <ScalarProperty Name="NewsFeedID" ColumnName="NewsFeedID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Topic" ColumnName="Topic" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="ContentFileName" ColumnName="ContentFileName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuizs">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Quiz)">
+        <MappingFragment StoreEntitySet="tbQuizs">
+          <ScalarProperty Name="QuizID" ColumnName="QuizID" />
+          <ScalarProperty Name="QuizDetail" ColumnName="QuizDetail" />
+          <ScalarProperty Name="Choice" ColumnName="Choice" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sections">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Section)">
+        <MappingFragment StoreEntitySet="Sections">
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+          <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="ContentFileName" ColumnName="ContentFileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubscribers">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Subscriber)">
+        <MappingFragment StoreEntitySet="tbSubscribers">
+          <ScalarProperty Name="SubscriberID" ColumnName="SubscriberID" />
+          <ScalarProperty Name="SubscriberEmail" ColumnName="SubscriberEmail" />
+          <ScalarProperty Name="PreferenceType" ColumnName="PreferenceType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubscriberDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(education.SubscriberDetail)">
+        <MappingFragment StoreEntitySet="tbSubscriberDetails">
+          <ScalarProperty Name="SubscriberID" ColumnName="SubscriberID" />
+          <ScalarProperty Name="NewsFeedID" ColumnName="NewsFeedID" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTrackUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(education.TrackUser)">
+        <MappingFragment StoreEntitySet="tbTrackUsers">
+          <ScalarProperty Name="TrackUserID" ColumnName="TrackUserID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+          <ScalarProperty Name="DataRecord" ColumnName="DataRecord" />
+          <ScalarProperty Name="ActivityType" ColumnName="ActivityType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

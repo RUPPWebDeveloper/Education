@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="educationStoreContainer" CdmEntityContainer="educationContainer">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(education.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubjects">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Subject)">
+        <MappingFragment StoreEntitySet="tbSubjects">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbLessons">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Lesson)">
+        <MappingFragment StoreEntitySet="tbLessons">
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="LessonName" ColumnName="LessonName" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="LessonNumber" ColumnName="LessonNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAssignedRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(education.AssignedRole)">
+        <MappingFragment StoreEntitySet="tbAssignedRoles">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="AssignedDate" ColumnName="AssignedDate" />
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbExercises">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Exercise)">
+        <MappingFragment StoreEntitySet="tbExercises">
+          <ScalarProperty Name="ExerciseID" ColumnName="ExerciseID" />
+          <ScalarProperty Name="Exeercise" ColumnName="Exeercise" />
+          <ScalarProperty Name="AnswerKey" ColumnName="AnswerKey" />
+          <ScalarProperty Name="Solution" ColumnName="Solution" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsFeedCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(education.NewsFeedCategory)">
+        <MappingFragment StoreEntitySet="NewsFeedCategories">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsFeeds">
+      <EntityTypeMapping TypeName="IsTypeOf(education.NewsFeed)">
+        <MappingFragment StoreEntitySet="NewsFeeds">
+          <ScalarProperty Name="NewsFeedID" ColumnName="NewsFeedID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Topic" ColumnName="Topic" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="ContentFileName" ColumnName="ContentFileName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuizs">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Quiz)">
+        <MappingFragment StoreEntitySet="tbQuizs">
+          <ScalarProperty Name="QuizID" ColumnName="QuizID" />
+          <ScalarProperty Name="QuizDetail" ColumnName="QuizDetail" />
+          <ScalarProperty Name="Choice" ColumnName="Choice" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sections">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Section)">
+        <MappingFragment StoreEntitySet="Sections">
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+          <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="ContentFileName" ColumnName="ContentFileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubscribers">
+      <EntityTypeMapping TypeName="IsTypeOf(education.Subscriber)">
+        <MappingFragment StoreEntitySet="tbSubscribers">
+          <ScalarProperty Name="SubscriberID" ColumnName="SubscriberID" />
+          <ScalarProperty Name="SubscriberEmail" ColumnName="SubscriberEmail" />
+          <ScalarProperty Name="PreferenceType" ColumnName="PreferenceType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubscriberDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(education.SubscriberDetail)">
+        <MappingFragment StoreEntitySet="tbSubscriberDetails">
+          <ScalarProperty Name="SubscriberID" ColumnName="SubscriberID" />
+          <ScalarProperty Name="NewsFeedID" ColumnName="NewsFeedID" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTrackUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(education.TrackUser)">
+        <MappingFragment StoreEntitySet="tbTrackUsers">
+          <ScalarProperty Name="TrackUserID" ColumnName="TrackUserID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+          <ScalarProperty Name="DataRecord" ColumnName="DataRecord" />
+          <ScalarProperty Name="ActivityType" ColumnName="ActivityType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
